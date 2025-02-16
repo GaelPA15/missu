@@ -24,11 +24,12 @@ export default function Home() {
           <button className="yes-button" onClick={() => setIsYesClicked(true)}>
             Sí
           </button>
-          {/* Aquí está el truco, el botón "No" tiene un onMouseOver en lugar de onClick */}
+          {/* Aquí está el truco, el botón "No" tiene un onMouseOver y onTouchStart */}
           <button
             id="noButton"
             className="no-button"
-            onMouseOver={moveButton} // El botón se moverá cuando se pase el mouse sobre él
+            onMouseOver={moveButton} // Funciona en escritorio
+            onTouchStart={moveButton} // Funciona en móviles
             disabled // Esto hace que no se pueda hacer clic en el botón
           >
             No
